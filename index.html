@@ -108,7 +108,7 @@
           </div>
       </div>
 
-      <button class="py-3 w-full bg-white text-black hover:text-white hover:bg-yellow-500" onclick="navigateToGallery()">See More</button>
+      <button class="py-3 w-full bg-white text-black font-semibold hover:text-white hover:bg-yellow-500" onclick="navigateToGallery()">See More ></button>
     </section>
     <!--branding-->
     <section class="mx-auto h-[100dvh]">
@@ -172,62 +172,60 @@
     <!--carousel slider-->
     <section class="min-h-screen flex flex-col">
       <!-- Testimonial Section -->
-      <div class="flex-1 relative overflow-hidden  bg-[#ffd527]">
-          <div class="container mx-auto px-4 h-full flex items-center ">
-              <div class="w-full flex flex-col md:flex-row items-center justify-between gap-8 py-12">
-                  
-                  <!-- Quote and Content -->
-                  <div class="w-full md:w-1/2 space-y-6">
-                      <div class="text-blue-700 text-8xl font-serif">"</div>
-                      <h2 id="quote" class="text-3xl md:text-4xl font-bold text-gray-900"></h2>
-                      <p id="content" class="text-lg text-gray-800"></p>
-                      <p id="author" class="text-xl font-semibold text-gray-900"></p>
-
-                      <!-- Navigation Dots -->
-                      <div class="flex gap-2 mt-8" id="dots-container"></div>
-                  </div>
-
-                  <!-- Image -->
-                  <div class="w-full md:w-1/2 relative">
-                      <img id="testimonial-image" class="w-full h-[500px] object-cover rounded-lg shadow-xl">
-                  </div>
-              </div>
-          </div>
-
-          <!-- Navigation Arrows -->
-          <button onclick="prevSlide()" class="absolute left-4 top-1/2 -translate-y-1/2 bg-white/80 p-2 rounded-full hover:bg-white transition-colors">
-              &#9664;
-          </button>
-          <button onclick="nextSlide()" class="absolute right-4 top-1/2 -translate-y-1/2 bg-white/80 p-2 rounded-full hover:bg-white transition-colors">
-              &#9654;
-          </button>
-      </div>
-
+      <div class="flex-1 relative overflow-hidden bg-[#ffd527]">
+        <div class="container mx-auto px-4 h-full flex items-center">
+            <div class="w-full flex flex-col md:flex-row items-center justify-between gap-8 py-12">
+                
+                <!-- Quote and Content -->
+                <div class="w-full md:w-1/2 space-y-6">
+                    <div class="text-blue-700 text-8xl font-serif">"</div>
+                    <h2 id="quote" class="text-3xl md:text-4xl font-bold text-gray-900"></h2>
+                    <p id="content" class="text-lg text-gray-800"></p>
+                    <p id="author" class="text-xl font-semibold text-gray-900"></p>
+                    
+                    <!-- Navigation Dots -->
+                    <div class="flex gap-2 mt-8" id="dots-container"></div>
+                </div>
+                
+                <!-- Image -->
+                <div class="w-full md:w-1/2 relative flex justify-center items-center">
+                  <img id="testimonial-image" alt="mani_rathnam sir" 
+                       class="w-full h-[500px] max-w-full max-h-[500px] object-contain rounded-lg shadow-xl">
+              </div>                           
+            </div>
+        </div>
+        
+        <!-- Navigation Arrows -->
+        <button onclick="prevSlide()" class="absolute left-4 top-1/2 -translate-y-1/2 p-2 rounded-full hover:bg-blue-700 transition-colors">
+            ❮
+        </button>
+        <button onclick="nextSlide()" class="absolute right-4 top-1/2 -translate-y-1/2 p-2 rounded-full hover:bg-blue-700 transition-colors">
+            ❯
+        </button>
+    </div>
       <!-- Bottom Section -->
-      <!-- Bottom Section -->
-<div class="bg-white relative h-72"> <!-- Reduced Height -->
-  <!-- Text Section (Positioned Above Video) -->
-  <div class="absolute inset-0 flex items-center justify-end z-10 px-4">
-      <div class="flex items-center gap-4 bg-white/80 p-1 rounded-lg shadow-md">
-          <div class="bg-green-500 rounded-full p-3">
-              <span class="text-white text-2xl">&#9658;</span>
-          </div>
-          <p class="text-xl text-pink-500 text-right">
-              Play is the highest form of research.
-              <span class="text-gray-600 ml-2">Albert Einstein</span>
-          </p>
+      <div class="bg-white relative h-72"> <!-- Reduced Height -->
+        <!-- Text Section (Positioned Above Video) -->
+        <div class="absolute inset-0 flex items-center justify-end z-10 px-4">
+            <div class="flex items-center gap-4 bg-white/80 p-1 rounded-lg shadow-md">
+                <div class="bg-green-500 rounded-full p-3">
+                    <span class="text-white text-2xl">&#9658;</span>
+                </div>
+                <p class="text-xl text-pink-500 text-right">
+                    Play is the highest form of research.
+                    <span class="text-gray-600 ml-2">Albert Einstein</span>
+                </p>
+            </div>
+        </div>
+
+        <!-- Video Section -->
+        <div class="absolute inset-0 w-full h-full overflow-hidden">
+            <video autoplay loop muted class="w-full h-full object-cover rounded-lg shadow-lg">
+                <source src="/horse_animation.mp4" type="video/mp4">
+                Your browser does not support the video tag.
+            </video>
+        </div>
       </div>
-  </div>
-
-  <!-- Video Section -->
-  <div class="absolute inset-0 w-full h-full overflow-hidden">
-      <video autoplay loop muted class="w-full h-full object-cover rounded-lg shadow-lg">
-          <source src="/horse_animation.mp4" type="video/mp4">
-          Your browser does not support the video tag.
-      </video>
-  </div>
-</div>
-
     </section>
     <!--Footer-->
     <section class="min-h-screen flex flex-col justify-center items-center bg-pink-500 text-white text-center p-10">
@@ -321,5 +319,68 @@
           window.location.href = "/photogalary.html";
       }
     </script>
+    <script>
+      const testimonials = [
+          {
+              quote: "Ipsum suspendisse ultrices gravida",
+              content: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quis ipsum suspendisse ultrices gravida.",
+              author: "- Mani Ratnam",
+              image: "/mani_sir.png"
+          },
+          {
+            quote: "Ipsum suspendisse ultrices gravida 2",
+            content: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quis ipsum suspendisse ultrices gravida.2",
+            author: "- Mani Ratnam",
+            image: "/mani_sir2.png"
+        },{
+          quote: "Ipsum suspendisse ultrices gravida 3",
+          content: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quis ipsum suspendisse ultrices gravida.3",
+          author: "- Mani Ratnam",
+          image: "/mani_sir3.png"
+      }
+      ];
+
+      let currentIndex = 0;
+
+      function updateTestimonial(index) {
+          document.getElementById("quote").innerText = testimonials[index].quote;
+          document.getElementById("content").innerText = testimonials[index].content;
+          document.getElementById("author").innerText = testimonials[index].author;
+          document.getElementById("testimonial-image").src = testimonials[index].image;
+
+          document.querySelectorAll(".dot").forEach((dot, i) => {
+              dot.classList.toggle("bg-green-500", i === index);
+              dot.classList.toggle("bg-white", i !== index);
+          });
+      }
+
+      const dotsContainer = document.getElementById("dots-container");
+      testimonials.forEach((_, index) => {
+          const dot = document.createElement("span");
+          dot.classList.add("dot", "w-4", "h-4", "rounded-full", "bg-white", "cursor-pointer", "transition-all");
+          dot.addEventListener("click", () => {
+              currentIndex = index;
+              updateTestimonial(currentIndex);
+          });
+          dotsContainer.appendChild(dot);
+      });
+
+      function prevSlide() {
+          currentIndex = (currentIndex - 1 + testimonials.length) % testimonials.length;
+          updateTestimonial(currentIndex);
+      }
+
+      function nextSlide() {
+          currentIndex = (currentIndex + 1) % testimonials.length;
+          updateTestimonial(currentIndex);
+      }
+
+      setInterval(() => {
+          currentIndex = (currentIndex + 1) % testimonials.length;
+          updateTestimonial(currentIndex);
+      }, 5000);
+
+      updateTestimonial(currentIndex);
+  </script>
   </body>
 </html>
