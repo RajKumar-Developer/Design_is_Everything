@@ -205,11 +205,11 @@
     </div>
     <!-- Bottom Section -->
     <div class="bg-white relative h-72 md:h-96 lg:h-[32rem] w-full"> 
-      <!-- Text Section (Positioned Above Video) -->
+      <!-- Text Section (Play/Pause Button) -->
       <div class="absolute inset-0 flex items-center justify-center md:justify-end z-10 px-4">
           <div class="flex items-center gap-4 bg-white/80 p-2 md:p-3 rounded-lg shadow-md max-w-lg md:max-w-2xl lg:max-w-4xl">
-              <div class="bg-green-500 rounded-full p-3">
-                  <span class="text-white text-2xl">&#9658;</span>
+              <div id="playButton" class="bg-green-500 rounded-full p-3 cursor-pointer">
+                  <span id="playIcon" class="text-white text-2xl">&#9658;</span> <!-- Play icon -->
               </div>
               <p class="text-lg md:text-xl text-pink-500 text-right">
                   Play is the highest form of research.
@@ -220,12 +220,13 @@
 
       <!-- Video Section -->
       <div class="absolute inset-0 w-full h-full">
-          <video autoplay loop muted playsinline class="w-full h-full object-cover rounded-lg shadow-lg">
+          <video id="videoElement" autoplay loop muted playsinline class="w-full h-full object-cover rounded-lg shadow-lg">
               <source src="/horse_animation.mp4" type="video/mp4">
               Your browser does not support the video tag.
           </video>
       </div>
     </div>
+
 
     </section>
     <!--Footer-->
@@ -382,6 +383,23 @@
       }, 5000);
 
       updateTestimonial(currentIndex);
+
+
+      document.addEventListener("DOMContentLoaded", function () {
+        const video = document.getElementById("videoElement");
+        const playButton = document.getElementById("playButton");
+        const playIcon = document.getElementById("playIcon");
+
+        playButton.addEventListener("click", function () {
+            if (video.paused) {
+                video.play();
+                playIcon.innerHTML = "&#10074;&#10074;"; // Pause symbol
+            } else {
+                video.pause();
+                playIcon.innerHTML = "&#9658;"; // Play symbol
+            }
+        });
+    });
   </script>
   </body>
 </html>
