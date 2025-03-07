@@ -73,7 +73,7 @@
     </section>
     <!--output Gallery-->
     <section class="w-full h-[100dvh]">
-      <div class="grid-layout">
+      <div class="grid-layout cursor-pointer">
           <!-- Row 1 -->
           <div class="grid-item bg-lime-500" onclick="navigateToGallery()">
               <img src="img1.webp" alt="Green food packaging" />
@@ -168,13 +168,13 @@
               <img src="/ibangle.png" alt="iBangle Image" class="w-full max-w-md md:max-w-lg h-[300px] sm:h-[400px] md:h-[500px] object-cover rounded-lg">
           </div>
       </div>
-  </section>
+    </section>
     <!--carousel slider-->
     <section class="min-h-screen flex flex-col">
       <!-- Testimonial Section -->
       <div class="flex-1 relative overflow-hidden bg-[#ffd527]">
         <div class="container mx-auto px-4 h-full flex items-center">
-            <div class="w-full flex flex-col md:flex-row items-center justify-between gap-8 py-12">
+            <div class="w-full flex flex-col md:flex-row items-center justify-between gap-8 py-1">
                 
                 <!-- Quote and Content -->
                 <div class="w-full md:w-1/2 space-y-6">
@@ -203,29 +203,30 @@
             ❯
         </button>
     </div>
-      <!-- Bottom Section -->
-      <div class="bg-white relative h-72"> <!-- Reduced Height -->
-        <!-- Text Section (Positioned Above Video) -->
-        <div class="absolute inset-0 flex items-center justify-end z-10 px-4">
-            <div class="flex items-center gap-4 bg-white/80 p-1 rounded-lg shadow-md">
-                <div class="bg-green-500 rounded-full p-3">
-                    <span class="text-white text-2xl">&#9658;</span>
-                </div>
-                <p class="text-xl text-pink-500 text-right">
-                    Play is the highest form of research.
-                    <span class="text-gray-600 ml-2">Albert Einstein</span>
-                </p>
-            </div>
-        </div>
-
-        <!-- Video Section -->
-        <div class="absolute inset-0 w-full h-full overflow-hidden">
-            <video autoplay loop muted class="w-full h-full object-cover rounded-lg shadow-lg">
-                <source src="/horse_animation.mp4" type="video/mp4">
-                Your browser does not support the video tag.
-            </video>
-        </div>
+    <!-- Bottom Section -->
+    <div class="bg-white relative h-72 md:h-96 lg:h-[32rem] w-full"> 
+      <!-- Text Section (Positioned Above Video) -->
+      <div class="absolute inset-0 flex items-center justify-center md:justify-end z-10 px-4">
+          <div class="flex items-center gap-4 bg-white/80 p-2 md:p-3 rounded-lg shadow-md max-w-lg md:max-w-2xl lg:max-w-4xl">
+              <div class="bg-green-500 rounded-full p-3">
+                  <span class="text-white text-2xl">&#9658;</span>
+              </div>
+              <p class="text-lg md:text-xl text-pink-500 text-right">
+                  Play is the highest form of research.
+                  <span class="text-gray-600 ml-2">Albert Einstein</span>
+              </p>
+          </div>
       </div>
+
+      <!-- Video Section -->
+      <div class="absolute inset-0 w-full h-full">
+          <video autoplay loop muted playsinline class="w-full h-full object-cover rounded-lg shadow-lg">
+              <source src="/horse_animation.mp4" type="video/mp4">
+              Your browser does not support the video tag.
+          </video>
+      </div>
+    </div>
+
     </section>
     <!--Footer-->
     <section class="min-h-screen flex flex-col justify-center items-center bg-pink-500 text-white text-center p-10">
