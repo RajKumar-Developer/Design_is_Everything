@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" type="image/svg+xml" href="/icon.png" />
+    <script src="https://cdn.tailwindcss.com"></script>
+    <title>Photo | Collection</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        /* Fullscreen Popup Styling */
+        .fullscreen {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.9);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            z-index: 1000;
+            display: none;
+        }
+        .fullscreen img {
+            max-width: 90%;
+            max-height: 90%;
+            border-radius: 10px;
+            box-shadow: 0 0 20px rgba(255, 255, 255, 0.5);
+        }
+        .close-btn {
+            position: absolute;
+            top: 20px;
+            right: 30px;
+            font-size: 30px;
+            color: white;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+    <section class="w-full min-h-screen">
+        <div class="grid grid-cols-3 h-full">
+            <!-- First Column -->
+            <div class="flex flex-col">
+                <img src="img1.webp" alt="Toss" class="w-full h-1/3 object-cover open-popup">
+                <img src="img2.webp" alt="Rockstar" class="w-full h-2/3 object-cover open-popup">
+            </div>
+
+            <!-- Second Column -->
+            <div class="flex flex-col">
+                <img src="img3.webp" alt="Sports" class="w-full h-1/2 object-cover open-popup">
+                <img src="img4.webp" alt="Drumila" class="w-full h-1/2 object-cover open-popup">
+            </div>
+
+            <!-- Third Column -->
+            <div class="flex flex-col">
+                <img src="img5.webp" alt="YNOT Studios" class="w-full h-1/3 object-cover open-popup">
+                <img src="img6.webp" alt="Coffee" class="w-full h-1/3 object-cover open-popup">
+                <img src="img7.webp" alt="Red Knot" class="w-full h-1/3 object-cover open-popup">
+            </div>
+        </div>
+    </section>
+
+    <!-- Second Section -->
+    <section class="w-full min-h-screen">
+        <div class="grid grid-cols-3 h-full">
+            <!-- First Column -->
+            <div class="flex flex-col">
+                <img src="img8.webp" alt="Toss" class="w-full h-1/3 object-cover open-popup">
+                <img src="img9.webp" alt="Rockstar" class="w-full h-2/3 object-cover open-popup">
+            </div>
+        
+            <!-- Second Column -->
+            <div class="flex flex-col">
+                <img src="img10.webp" alt="Sports" class="w-full h-1/2 object-cover open-popup">
+                <img src="img11.webp" alt="Drumila" class="w-full h-1/2 object-cover open-popup">
+            </div>
+        
+            <!-- Third Column -->
+            <div class="flex flex-col">
+                <img src="img12.webp" alt="YNOT Studios" class="w-full h-1/3 object-cover open-popup">
+                <img src="img13.webp" alt="Coffee" class="w-full h-1/3 object-cover open-popup">
+                <img src="img14.webp" alt="Red Knot" class="w-full h-1/3 object-cover open-popup">
+            </div>
+        </div>
+    </section>  
+
+    <!-- Fullscreen Popup -->
+    <div id="imagePopup" class="fullscreen">
+        <span class="close-btn" onclick="closePopup()">&times;</span>
+        <img id="popupImg" src="" alt="Popup Image">
+    </div>
+
+    <script>
+        // Function to open image in full-screen mode
+        document.querySelectorAll('.open-popup').forEach(img => {
+            img.addEventListener('click', function () {
+                document.getElementById('popupImg').src = this.src;
+                document.getElementById('imagePopup').style.display = 'flex';
+            });
+        });
+
+        // Function to close the full-screen popup
+        function closePopup() {
+            document.getElementById('imagePopup').style.display = 'none';
+        }
+
+        // Close popup on clicking outside the image
+        document.getElementById('imagePopup').addEventListener('click', function (e) {
+            if (e.target.id === 'imagePopup') {
+                closePopup();
+            }
+        });
+    </script>
+</body>
+</html>
