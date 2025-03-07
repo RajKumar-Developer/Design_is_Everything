@@ -9,7 +9,6 @@
     <script src="https://cdn.tailwindcss.com"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
     <style>
-
       .active {
         background-color: yellow;
         color: blue;
@@ -39,37 +38,61 @@
   </head>
   <body>
     <!-- Navbar -->
-    <nav class="flex justify-end p-6 bg-[#24d56d]">
-        <ul class="flex space-x-6 text-lg uppercase">
-            <li><a href="#" class="active">Home</a></li>
-            <li><a href="#">Work</a></li>
-            <li><a href="#">Services</a></li>
-            <li><a href="#">Team</a></li>
-            <li><a href="#">Testimonials</a></li>
-            <li><a href="#">Contact</a></li>
-        </ul>
+    <nav class="bg-[#24d56d] p-6">
+      <div class="flex justify-between items-center max-w-6xl mx-auto">
+          <!-- Logo (Optional, Add Your Logo Here) -->
+          <div class="text-white text-2xl font-bold"> </div>
+
+          <!-- Desktop Menu -->
+          <ul class="hidden md:flex space-x-6 text-lg uppercase">
+              <li><a href="#" class="active">Home</a></li>
+              <li><a href="#">Work</a></li>
+              <li><a href="#">Services</a></li>
+              <li><a href="#">Team</a></li>
+              <li><a href="#">Testimonials</a></li>
+              <li><a href="#">Contact</a></li>
+          </ul>
+
+          <!-- Mobile Menu Button -->
+          <button id="menu-btn" class="md:hidden text-white text-3xl">
+              ☰
+          </button>
+      </div>
+
+      <!-- Mobile Menu (Hidden by Default) -->
+      <ul id="mobile-menu" class="hidden flex-col space-y-4 p-6 text-lg uppercase bg-[#24d56d] text-white text-center md:hidden">
+          <li><a href="#" class="block">Home</a></li>
+          <li><a href="#" class="block">Work</a></li>
+          <li><a href="#" class="block">Services</a></li>
+          <li><a href="#" class="block">Team</a></li>
+          <li><a href="#" class="block">Testimonials</a></li>
+          <li><a href="#" class="block">Contact</a></li>
+      </ul>
     </nav>
     <!-- Hero Section -->
-    <section class="flex items-center justify-center h-screen px-12 bg-[#24d56d] w-full">
-        <div class="flex items-center justify-between w-full max-w-6xl">
-            <div class="w-1/2 flex justify-center">
-                <img src="/MIW_Logo.png" alt="Magic White Logo" class="w-72">
-            </div>
-            <div class="w-1/2 text-right">
-                <h1 class="text-4xl font-bold leading-tight text-left">
-                    WE BELIEVE THAT<br> 
-                    INTELLIGENT CREATIVE<br> 
-                    THINKING HELPS<br> 
-                    ORGANISATIONS AND<br> 
-                    INDIVIDUALS TO GROW
-                </h1>
-                <p class="text-lg mt-4 text-left text-[#056b29]">
-                    Every relationship with every client is a partnership; we work alongside them to make their goals a reality 
-                    and help them to grow their businesses. Whatever the task, no matter whether it's big or small, we bring our 
-                    experience and expertise to that project and strive to deliver the best possible solution.
-                </p>
-            </div>
-        </div>
+    <section class="flex items-center justify-center h-screen px-6 md:px-12 bg-[#24d56d] w-full">
+      <div class="flex flex-col-reverse md:flex-row items-center justify-between w-full max-w-6xl">
+          <!-- Logo Section -->
+          <div class="w-full md:w-1/2 flex justify-center mt-6 md:mt-0">
+              <img src="/MIW_Logo.png" alt="Magic White Logo" class="w-40 md:w-72">
+          </div>
+
+          <!-- Text Section -->
+          <div class="w-full md:w-1/2 text-center md:text-left">
+              <h1 class="text-2xl md:text-4xl font-bold leading-tight">
+                  WE BELIEVE THAT<br> 
+                  INTELLIGENT CREATIVE<br> 
+                  THINKING HELPS<br> 
+                  ORGANISATIONS AND<br> 
+                  INDIVIDUALS TO GROW
+              </h1>
+              <p class="text-base md:text-lg mt-4 text-[#056b29]">
+                  Every relationship with every client is a partnership; we work alongside them to make their goals a reality 
+                  and help them to grow their businesses. Whatever the task, no matter whether it's big or small, we bring our 
+                  experience and expertise to that project and strive to deliver the best possible solution.
+              </p>
+          </div>
+      </div>
     </section>
     <!--output Gallery-->
     <section class="w-full h-[100dvh]">
@@ -209,7 +232,7 @@
       <div class="absolute inset-0 flex items-center justify-center md:justify-end z-10 px-4">
           <div class="flex items-center gap-4 bg-white/80 p-2 md:p-3 rounded-lg shadow-md max-w-lg md:max-w-2xl lg:max-w-4xl">
               <div id="playButton" class="bg-green-500 rounded-full p-3 cursor-pointer">
-                  <span id="playIcon" class="text-white text-2xl">&#9658;</span> <!-- Play icon -->
+                  <span id="playIcon" class="text-white text-2xl cursor-pointer ">&#9658;</span> <!-- Play icon -->
               </div>
               <p class="text-lg md:text-xl text-pink-500 text-right">
                   Play is the highest form of research.
@@ -240,77 +263,76 @@
               <button class="bg-blue-600 px-8 py-4 text-lg text-white font-semibold">SUBSCRIBE</button>
           </div>
       
-          <!-- Flex List & Button + Social Icons -->
-          <div class="mt-10 flex justify-between items-start">
-              <!-- Flex List (Aligned to Start & Half of Input Field) -->
-              <div class="grid grid-cols-2 md:grid-cols-4 gap-x-10 gap-y-4 w-2/3">
-                  <div class="w-40">
-                      <h3 class="font-semibold text-left ">DOOGEE</h3>
-                      <ul class="space-y-1 text-left">
-                          <li>Teardown</li>
-                          <li>News</li>
-                          <li>Partners</li>
-                          <li>About Us</li>
-                          <li>Contact Us</li>
-                          <li>Terms of Use</li>
-                      </ul>
-                  </div>
-                  <div class="w-40">
-                      <h3 class="font-semibold text-left">Social</h3>
-                      <ul class="space-y-1 text-left">
-                          <li>Facebook</li>
-                          <li>Twitter</li>
-                          <li>Youtube</li>
-                      </ul>
-                  </div>
-                  <div class="w-40">
-                      <h3 class="font-semibold text-left">Service</h3>
-                      <ul class="space-y-1 text-left">
-                          <li>Compare</li>
-                          <li>Download</li>
-                          <li>Feedback</li>
-                          <li>Bug Report</li>
-                      </ul>
-                  </div>
-                  <div class="w-40">
-                      <h3 class="font-semibold text-left">Activity</h3>
-                      <ul class="space-y-1 text-left">
-                          <li>Influencers</li>
-                          <li>Affiliate</li>
-                          <li>Co-branding</li>
-                          <li>Honor</li>
-                          <li>Giveaway</li>
-                      </ul>
-                  </div>
-              </div>
-      
-              <!-- Button + Social Media Icons (Placed on the Right) -->
-              <div class="flex flex-col items-center space-y-4">
-                    <button class="bg-pink-500 border border-white px-6 py-3 text-lg text-white font-semibold flex items-center gap-2"> 
-                      <i class="fas fa-share"></i>
-                      Share this Website
-                    </button>
-                               
-                    <div class="flex gap-4">
-                      <a href="#" class="w-12 h-12 flex items-center justify-center border-2 border-white rounded-full text-white text-2xl">
-                          <i class="fab fa-twitter"></i>
-                      </a>
-                      <a href="#" class="w-12 h-12 flex items-center justify-center border-2 border-white rounded-full text-white text-2xl">
-                          <i class="fab fa-facebook"></i>
-                      </a>
-                      <a href="#" class="w-12 h-12 flex items-center justify-center border-2 border-white rounded-full text-white text-2xl">
-                          <i class="fab fa-youtube"></i>
-                      </a>
-                      <a href="#" class="w-12 h-12 flex items-center justify-center border-2 border-white rounded-full text-white text-2xl">
-                          <i class="fab fa-vimeo"></i>
-                      </a>
-                      <a href="#" class="w-12 h-12 flex items-center justify-center border-2 border-white rounded-full text-white text-2xl">
-                          <i class="fab fa-instagram"></i>
-                      </a>
-                  </div>
-                  
-              </div>
-          </div>
+          <div class="mt-10 flex flex-col md:flex-row justify-between items-start space-y-6 md:space-y-0">
+            <!-- Flex List (Responsive Grid) -->
+            <div class="grid grid-cols-2 md:grid-cols-4 gap-x-10 gap-y-4 w-full md:w-2/3 text-center md:text-left">
+                <div class="w-full md:w-40">
+                    <h3 class="font-semibold">DOOGEE</h3>
+                    <ul class="space-y-1">
+                        <li>Teardown</li>
+                        <li>News</li>
+                        <li>Partners</li>
+                        <li>About Us</li>
+                        <li>Contact Us</li>
+                        <li>Terms of Use</li>
+                    </ul>
+                </div>
+                <div class="w-full md:w-40">
+                    <h3 class="font-semibold">Social</h3>
+                    <ul class="space-y-1">
+                        <li>Facebook</li>
+                        <li>Twitter</li>
+                        <li>Youtube</li>
+                    </ul>
+                </div>
+                <div class="w-full md:w-40">
+                    <h3 class="font-semibold">Service</h3>
+                    <ul class="space-y-1">
+                        <li>Compare</li>
+                        <li>Download</li>
+                        <li>Feedback</li>
+                        <li>Bug Report</li>
+                    </ul>
+                </div>
+                <div class="w-full md:w-40">
+                    <h3 class="font-semibold">Activity</h3>
+                    <ul class="space-y-1">
+                        <li>Influencers</li>
+                        <li>Affiliate</li>
+                        <li>Co-branding</li>
+                        <li>Honor</li>
+                        <li>Giveaway</li>
+                    </ul>
+                </div>
+            </div>
+        
+            <!-- Button + Social Media Icons (Responsive) -->
+            <div class="flex flex-col items-center md:items-end space-y-4 w-full md:w-auto">
+                <button class="bg-pink-500 border border-white px-6 py-3 text-lg text-white font-semibold flex items-center gap-2"> 
+                    <i class="fas fa-share"></i> Share this Website
+                </button>
+                
+                <!-- Social Icons (Centered on Small Screens) -->
+                <div class="flex flex-wrap justify-center md:justify-end gap-4">
+                    <a href="#" class="w-10 h-10 flex items-center justify-center border-2 border-white rounded-full text-white text-xl">
+                        <i class="fab fa-twitter"></i>
+                    </a>
+                    <a href="#" class="w-10 h-10 flex items-center justify-center border-2 border-white rounded-full text-white text-xl">
+                        <i class="fab fa-facebook"></i>
+                    </a>
+                    <a href="#" class="w-10 h-10 flex items-center justify-center border-2 border-white rounded-full text-white text-xl">
+                        <i class="fab fa-youtube"></i>
+                    </a>
+                    <a href="#" class="w-10 h-10 flex items-center justify-center border-2 border-white rounded-full text-white text-xl">
+                        <i class="fab fa-vimeo"></i>
+                    </a>
+                    <a href="#" class="w-10 h-10 flex items-center justify-center border-2 border-white rounded-full text-white text-xl">
+                        <i class="fab fa-instagram"></i>
+                    </a>
+                </div>
+            </div>
+        </div>
+        
       </div>
       
       </div>
@@ -399,6 +421,13 @@
                 playIcon.innerHTML = "&#9658;"; // Play symbol
             }
         });
+    });
+
+    const menuBtn = document.getElementById('menu-btn');
+    const mobileMenu = document.getElementById('mobile-menu');
+
+    menuBtn.addEventListener('click', () => {
+        mobileMenu.classList.toggle('hidden');
     });
   </script>
   </body>
